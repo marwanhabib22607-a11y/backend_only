@@ -55,6 +55,10 @@ app.use(
 /**
  * Main API router (ONLY ONCE)
  */
-app.use("/api", router);
+app.use("/api", (req, res) => {
+  res.json({ test: "new deploy works" });
+});
 
 export default app;
+
+console.log("BACKEND NEW VERSION RUNNING");
