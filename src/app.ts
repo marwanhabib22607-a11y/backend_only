@@ -9,18 +9,13 @@ const app: Express = express();
 /**
  * CORS must be FIRST
  */
-app.use(
-  cors({
-    origin: "https://lightgoldenrodyellow-quail-312536.hostingersite.com",
-    credentials: true,
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-  })
-);
+app.use(cors({
+  origin: "https://lightgoldenrodyellow-quail-312536.hostingersite.com",
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+}));
 
-/**
- * Explicit preflight handling
- */
 app.options("*", cors());
 
 /**
@@ -28,6 +23,8 @@ app.options("*", cors());
  */
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+app.use("/api", router);
 
 /**
  * Logging (keep early so you see failed requests too)

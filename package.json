@@ -4,11 +4,11 @@
   "private": true,
   "type": "module",
   "scripts": {
-  "dev": "export NODE_ENV=development && pnpm run build && pnpm run start",
-  "build": "echo 'skip build on server'",
-  "start": "node ./dist/index.mjs",
-  "typecheck": "tsc -p tsconfig.json --noEmit"
-},
+    "dev": "pnpm run build && pnpm run start",
+    "build": "tsc",
+    "start": "node ./dist/index.mjs",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
   "dependencies": {
     "bcryptjs": "^3.0.3",
     "cookie-parser": "^1.4.7",
