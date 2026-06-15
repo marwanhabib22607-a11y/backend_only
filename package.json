@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
   "dev": "export NODE_ENV=development && pnpm run build && pnpm run start",
-  "build": "node ./build.mjs",
+  "build": "echo 'skip build on server'",
   "start": "node ./dist/index.mjs",
   "typecheck": "tsc -p tsconfig.json --noEmit"
 },
